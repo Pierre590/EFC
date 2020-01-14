@@ -42,7 +42,11 @@
                 </tr>
                 <tr>
                     <td >Classification : </td>
+                    {% if game.classification == null %}
+                    <td >Inconnue</td>
+                    {% else %}
                     <td>+ {{ game.classification }} ans</td>
+                    {% endif %}
                 </tr>
                 <tr>
                     <td>Jeuxvidéo.com :</td>
