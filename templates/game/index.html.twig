@@ -40,7 +40,11 @@
         </div>
     </div>
     <div class="card-footer text-success font-weight-bold text-center"alt="Note du jeu">
-        {{ game.review }} / 20
+        {% if game.review == null %}
+            pas de note
+        {% else %}
+        <td>{{ game.review }} / 20</td>
+        {% endif %}
     </div>
   </div>
 </div>
