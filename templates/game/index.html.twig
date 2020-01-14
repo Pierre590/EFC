@@ -2,25 +2,45 @@
 
 {% block title %}Hello ECF{% endblock %}
 
+
+
+{% block stylesheet %}
+<style>
+
+.image {
+    width: 250px;
+    height: 100px;
+}
+
+</style>
+{% endblock %}
+
+
 {% block body %}
 
+{% for game in games %}
 <div class="card mt-3">
   <div class="card-body">
     <div class="row">
-        <div class="col-md-5">
-            <img class="image" src="">
+        <div class="col-md-3 d-flex">
+            <img class="image img-fluid py-5 px-5" src="{{ game.cover }}">
         </div>
-        <div class="col-md-7">
-            <h1 class="card-header text-light text-center font-weight-bold"></h1>
-                <div class="card-body">
-                    <h5 class="card-title text-center" style="background-color:white"></h5>
-                    <p class="card-text" style="background-color:white"></p>
-                    <a href="" class="btn btn-danger">En savoir plus</a>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title text-center" style="background-color:white">{{ game.Name }}</h5>
+                <p class="card-text mt-5" style="background-color:white">{{ game.description }}</p>
+                <div class="sortie font-weight-bold">
+                    Sortie le :  {{ game.date |date('d-m-Y') }}
                 </div>
+            </div>
         </div>
-
+    </div>
+    <div class="card-footer text-success text-center">
+        {{ game.review }} / 20
     </div>
   </div>
 </div>
+{% endfor %}
+
 
 {% endblock %}
