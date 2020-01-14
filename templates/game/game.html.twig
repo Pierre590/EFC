@@ -9,13 +9,13 @@
   <div class="card-body">
     <div class="row">
         <div class="col-md-3">
-            <img class="image img-fluid py-5 px-5" src="{{game.cover }}">
+            <img class="image img-fluid py-5 px-5" src="{{game.cover }}"alt="Affiche du jeu">
         </div>
         <div class="col-md-9">
             <div class="card-body">
-                <h5 class="card-title text-center" style="background-color:white">{{game.name }}</h5>
-                <p class="card-text mt-5" style="background-color:white">{{ game.description }}</p>
-                <div class="sortie">
+                <h5 class="card-title text-center" alt="Nom du jeu" style="background-color:white">{{game.name }}</h5>
+                <p class="card-text mt-5"alt="Description du jeu" style="background-color:white">{{ game.description }}</p>
+                <div class="sortie"alt="Date de sortie du jeu">
                     Sortie le : <span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <td>+ {{ game.classification }} ans</td>
                 </tr>
                 <tr>
-                    <td >Jeuxvidéo.com :</td>
+                    <td>Jeuxvidéo.com :</td>
                     <td><a href="{{ game.link }}">En savoir plus</a></td>
                 </tr>
                 </tbody>
