@@ -7,10 +7,6 @@
 {% block stylesheet %}
 <style>
 
-.image {
-    width: 250px;
-    height: 100px;
-}
 
 </style>
 {% endblock %}
@@ -23,8 +19,9 @@
   <div class="card-body">
     <div class="row">
         <div class="col-md-3 d-flex">
+            <a href="{{ path ('game', {id:game.id})}}">
             <img class="image img-fluid py-5 px-5" src="{{ game.cover }}">
-
+            </a>
         </div>
         <div class="col-md-9">
             <div class="card-body">
@@ -36,12 +33,16 @@
             </div>
         </div>
     </div>
-    <div class="card-footer text-success text-center">
+    <div class="card-footer text-success font-weight-bold text-center">
         {{ game.review }} / 20
     </div>
   </div>
 </div>
 {% endfor %}
+<div class="page">
+
+
+</div>
 
 
 {% endblock %}

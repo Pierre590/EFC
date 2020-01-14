@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EditorController!{% endblock %}
+
+{% block body %}
+
+
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row">
+        <div class="col-md-3">
+            <img class="image img-fluid py-5 px-5" src="{{game.cover }}">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title text-center" style="background-color:white">{{game.name }}</h5>
+                <p class="card-text mt-5" style="background-color:white">{{ game.description }}</p>
+                <div class="sortie">
+                    Sortie le : <span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td >Editeur(s) / Développeur(s) :</td>
+                    <td>{{ game.editor.name }}</td>
+                </tr>
+                <tr>
+                    <td >Sortie le :</td>
+                    <td><span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span></td>
+                </tr>
+                <tr>
+                    <td >Classification : </td>
+                    <td>+ {{ game.classification }} ans</td>
+                </tr>
+                <tr>
+                    <td >Jeuxvidéo.com :</td>
+                    <td><a href="{{ game.link }}">En savoir plus</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
