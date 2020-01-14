@@ -3,18 +3,40 @@
 {% block title %}Hello EditorController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/pierre/Documents/project/games/src/Controller/EditorController.php'|file_link(0) }}">src/Controller/EditorController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/pierre/Documents/project/games/templates/editor/index.html.twig'|file_link(0) }}">templates/editor/index.html.twig</a></code></li>
-    </ul>
+{% for game in games %}
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="row">
+        <div class="col-md-3 d-flex">
+            <img class="image img-fluid py-5 px-5" src="{{game.cover }}">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title text-center" style="background-color:white">{{game.name }}</h5>
+                <p class="card-text mt-5" style="background-color:white">{{ game.description }}</p>
+                <div class="sortie">
+                    Sortie le : <span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer mb-2">
+        <p>Editeur(s) / Développeur(s) : </p>
+    </div>
+    <div class="card-footer mb-2">
+        <p>Sortie :  <span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span></p>
+    </div>
+    <div class="card-footer mb-2">
+        <p>Classification : + {{ game.classification }}ans</p>
+    </div>
+    <div class="card-footer mb-2">
+        Jeuxvidéo.com : <a href="{{ game.link }}">{{ game.link }}</a>
+    </div>
+  </div>
 </div>
+{% endfor %}
+
+
+
 {% endblock %}
