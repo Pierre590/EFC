@@ -22,16 +22,44 @@
         </div>
     </div>
     <div class="card-footer mb-2">
-        <p>Editeur(s) / Développeur(s) : </p>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Editeur(s) / Développeur(s) : </p>
+            </div>
+            <div class="col-md-9 text-center">
+
+            </div>
+        </div>
     </div>
     <div class="card-footer mb-2">
-        <p>Sortie :  <span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span></p>
+        <div class="row">
+            <div class="col-md-3">
+                Sortie le :
+            </div>
+            <div class="col-md-9 text-center">
+                <span style="font-weight:bold"> {{ game.date |date('d-m-Y') }}</span>
+            </div>
+        </div>
     </div>
     <div class="card-footer mb-2">
-        <p>Classification : + {{ game.classification }}ans</p>
+        <div class="row">
+            <div class="col-md-3">
+                Classification : +
+            </div>
+            <div class="col-md-9 text-center">
+                {{ game.classification }} ans
+            </div>
+        </div>
     </div>
     <div class="card-footer mb-2">
-        Jeuxvidéo.com : <a href="{{ game.link }}">{{ game.link }}</a>
+        <div class="row">
+            <div class="col-md-3">
+                Jeuxvidéo.com :
+            </div>
+            <div class="col-md-9 text-center">
+                <a href="{{ game.link }}">{{ game.link }}</a>
+            </div>
+        </div>
     </div>
   </div>
 </div>

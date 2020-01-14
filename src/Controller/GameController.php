@@ -21,4 +21,5 @@ class GameController extends AbstractController
             'games' => $games,
         ]);
     }
+
 }
