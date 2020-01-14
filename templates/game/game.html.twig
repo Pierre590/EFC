@@ -30,7 +30,10 @@
                 <tbody>
                 <tr>
                     <td >Editeur(s) / Développeur(s) :</td>
+                    {% if game.editor == null or game.editor.id == 0 %}
+                    {% else %}
                     <td>{{ game.editor.name }}</td>
+                    {% endif %}
                 </tr>
                 <tr>
                     <td >Sortie le :</td>
